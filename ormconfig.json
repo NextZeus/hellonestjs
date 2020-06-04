@@ -1,0 +1,16 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "123456",
+    "database": "test",
+    "entities": [
+        "dist/**/*.entity{.ts,.js}"
+    ],
+    "autoLoadEntities": true,
+    "synchronize": true,
+    "keepConnectionAlive": false,
+    "retryAttempts": 10, 
+    "retryDelay": 3000
+}

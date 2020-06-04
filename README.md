@@ -73,3 +73,142 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+
+# Docker Mysql 
+
+```
+docker run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+docker exec -it ${mysql containerid} /bin/sh
+# mysql -h localhost -uroot -p
+password: input 123456
+
+```
+# Mysql Error
+
+[Stackoverflow Link](https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server)
+### Error1 ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+```
+[Nest] 8759   - 2020/06/04 下午3:31:55   [TypeOrmModule] Unable to connect to the database. Retrying (2)... +3011ms
+Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    --------------------
+    at Protocol._enqueue (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/typeorm/driver/mysql/MysqlDriver.js:786:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/typeorm/driver/mysql/MysqlDriver.js:783:16)
+    at MysqlDriver.<anonymous> (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/typeorm/driver/mysql/MysqlDriver.js:278:51)
+    at step (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/tslib/tslib.js:141:27)
+    at Object.next (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/tslib/tslib.js:122:57)
+
+
+```
+
+### Fix Solution
+
+##### 1
+```
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+mysql> FLUSH PRIVILEGES;
+mysql> quit
+
+```
+##### 2 (remove @'localhost')
+```
+mysql> ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY '123456';
+mysql> FLUSH PRIVILEGES;
+mysql> quit
+
+```
+
+## Error2 Error: ER_BAD_DB_ERROR: Unknown database 'test'
+
+```
+[Nest] 8767   - 2020/06/04 下午3:34:07   [TypeOrmModule] Unable to connect to the database. Retrying (2)... +3012ms
+Error: ER_BAD_DB_ERROR: Unknown database 'test'
+    at Handshake.Sequence._packetToError (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (events.js:315:20)
+    at addChunk (_stream_readable.js:302:12)
+    --------------------
+    at Protocol._enqueue (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/typeorm/driver/mysql/MysqlDriver.js:786:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/typeorm/driver/mysql/MysqlDriver.js:783:16)
+    at MysqlDriver.<anonymous> (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/typeorm/driver/mysql/MysqlDriver.js:278:51)
+    at step (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/tslib/tslib.js:141:27)
+    at Object.next (/Users/xiaodong/Documents/GitHub/hellonestjs/node_modules/tslib/tslib.js:122:57)
+
+
+```
+
+## Fix Solution
+
+```
+
+# mysql -h localhost -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 28
+Server version: 8.0.20 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database test;
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+
+```
+
+# Done
+
+```
+
+xiaodong@bogon ~/D/G/hellonestjs (typeorm_mysql) [SIGINT]> npm run start
+
+> hellonestjs@0.0.1 start /Users/xiaodong/Documents/GitHub/hellonestjs
+> nest start
+
+[Nest] 9297   - 2020/06/04 下午3:43:46   [NestFactory] Starting Nest application...
+[Nest] 9297   - 2020/06/04 下午3:43:46   [InstanceLoader] TypeOrmModule dependencies initialized +203ms
+[Nest] 9297   - 2020/06/04 下午3:43:46   [InstanceLoader] AppModule dependencies initialized +1ms
+[Nest] 9297   - 2020/06/04 下午3:43:46   [InstanceLoader] TypeOrmCoreModule dependencies initialized +85ms
+[Nest] 9297   - 2020/06/04 下午3:43:46   [InstanceLoader] TypeOrmModule dependencies initialized +0ms
+[Nest] 9297   - 2020/06/04 下午3:43:46   [InstanceLoader] UserModule dependencies initialized +0ms
+[Nest] 9297   - 2020/06/04 下午3:43:47   [RoutesResolver] AppController {/nestjs_api}: +346ms
+[Nest] 9297   - 2020/06/04 下午3:43:47   [RouterExplorer] Mapped {/nestjs_api, GET} route +2ms
+[Nest] 9297   - 2020/06/04 下午3:43:47   [RoutesResolver] UserController {/nestjs_api/user}: +1ms
+[Nest] 9297   - 2020/06/04 下午3:43:47   [RouterExplorer] Mapped {/nestjs_api/user, POST} route +0ms
+[Nest] 9297   - 2020/06/04 下午3:43:47   [RouterExplorer] Mapped {/nestjs_api/user, GET} route +1ms
+[Nest] 9297   - 2020/06/04 下午3:43:47   [RouterExplorer] Mapped {/nestjs_api/user, DELETE} route +0ms
+[Nest] 9297   - 2020/06/04 下午3:43:47   [NestApplication] Nest application successfully started +2ms
+
+```
