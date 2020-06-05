@@ -73,3 +73,85 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+
+# Postgresql & Typeorm
+
+[nestjs-typeorm-and-postgresql](https://medium.com/@gausmann.simon/nestjs-typeorm-and-postgresql-full-example-development-and-project-setup-working-with-database-c1a2b1b11b8f)
+
+
+### Start Postgresql db server
+```
+
+xiaodong@bogon ~/D/G/hellonestjs (typeorm_postgres) [125]> npm run start:dev:db
+
+> hellonestjs@0.0.1 start:dev:db /Users/xiaodong/Documents/GitHub/hellonestjs
+> sh ./src/scripts/start-pg-server.sh
+
+echo stop & remove old docker [postgres] and starting new fresh instance of [postgres]
+Error response from daemon: Cannot kill container: postgres: Container 596038756fd93cf3ae6a7ca4bf799e1ba39698b47e21a061315e2463b980866c is not running
+postgres
+9079442178ba864d6444cde728dd23dcacb2776f9a057291041da38e88d1a58a
+sleep wait for pg-server [postgres] to start
+CREATE DATABASE
+                                 List of databases
+   Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+-----------+----------+----------+------------+------------+-----------------------
+ nest      | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+(4 rows)
+
+
+再执行一次结果
+xiaodong@bogon ~/D/G/hellonestjs (typeorm_postgres)> npm run start:dev:db
+
+> hellonestjs@0.0.1 start:dev:db /Users/xiaodong/Documents/GitHub/hellonestjs
+> sh ./src/scripts/start-pg-server.sh
+
+echo stop & remove old docker [postgres] and starting new fresh instance of [postgres]
+Error response from daemon: Cannot kill container: postgres: Container 0493645fc9903b4e0e6a24f5a355bfeefb10fdb14c0e17a6d338432a269969f3 is not running
+postgres
+73b98bb46e356fc13cd7cb9be226143e1708a2a709ae16a966321eb6c3b96a8c
+sleep wait for pg-server [postgres] to start
+【这里提示错误 数据库已经创建过了】
+ERROR:  database "nest" already exists
+                                 List of databases
+   Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+-----------+----------+----------+------------+------------+-----------------------
+ nest      | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+(4 rows)
+
+xiaodong@bogon ~/D/G/hellonestjs (typeorm_postgres)> docker exec -it postgres psql postgresql://postgres@127.0.0.1:5432/nest
+psql (12.0 (Debian 12.0-2.pgdg100+1))
+Type "help" for help.
+
+nest=# help
+You are using psql, the command-line interface to PostgreSQL.
+Type:  \copyright for distribution terms
+       \h for help with SQL commands
+       \? for help with psql commands
+       \g or terminate with semicolon to execute query
+       \q to quit
+nest=#
+
+```
+
+### 访问数据库
+
+```
+docker exec -it postgres psql postgresql://postgres@127.0.0.1:5432/nest
+
+```
+
+### 代码参考
+[这个一上来就用了其他的库 不建议刚开始使用太多库](https://rohanfaiyaz.com/post/nest/)
+[这个使用原生的](https://medium.com/better-programming/how-to-set-up-typeorm-with-postgres-in-nestjs-5575c949c05f)

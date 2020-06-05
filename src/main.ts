@@ -8,7 +8,7 @@ import { ResponseInterceptor } from './common/interceptors/response.interceptor'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix('/');
+  app.setGlobalPrefix('/nest_api');
   // 全局异常处理 统一返回 {error, errorMsg, serverTime}
   app.useGlobalFilters(new AllExceptionFilter());
   app.useGlobalPipes((

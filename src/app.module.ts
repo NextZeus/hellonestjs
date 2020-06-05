@@ -2,8 +2,14 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { PokemonModule } from './pokemon/pokemon.module';
+
 @Module({
-  imports: [],
+  imports: [
+    TypeOrmModule.forRoot(),
+    PokemonModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
