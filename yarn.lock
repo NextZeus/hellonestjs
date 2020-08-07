@@ -530,6 +530,25 @@
     webpack "4.43.0"
     webpack-node-externals "1.7.2"
 
+"@nestjs/common@6.3.1":
+  version "6.3.1"
+  resolved "http://54.223.73.218:4873/@nestjs%2fcommon/-/common-6.3.1.tgz#222f25251eb1b67c6e552e00b266048daa569bbc"
+  integrity sha1-Ii8lJR6xtnxuVS4AsmYEjapWm7w=
+  dependencies:
+    axios "0.19.0"
+    cli-color "1.4.0"
+    uuid "3.3.2"
+
+"@nestjs/common@^6.6.7":
+  version "6.11.11"
+  resolved "http://54.223.73.218:4873/@nestjs%2fcommon/-/common-6.11.11.tgz#701da2462a15cc94d55ec863ddd9f2fb0bbd7136"
+  integrity sha1-cB2iRioVzJTVXshj3dny+wu9cTY=
+  dependencies:
+    axios "0.19.2"
+    cli-color "2.0.0"
+    tslib "1.11.1"
+    uuid "7.0.1"
+
 "@nestjs/common@^7.0.0":
   version "7.1.0"
   resolved "http://54.223.73.218:4873/@nestjs%2fcommon/-/common-7.1.0.tgz#4fe8bc15903ee23d458c429b5cf7579edb0ef3a3"
@@ -540,6 +559,19 @@
     iterare "1.2.0"
     tslib "2.0.0"
     uuid "8.0.0"
+
+"@nestjs/core@^6.6.7":
+  version "6.11.11"
+  resolved "http://54.223.73.218:4873/@nestjs%2fcore/-/core-6.11.11.tgz#2b97a3e9c2a853f5693ed84daf81c1ee3b2782b4"
+  integrity sha1-K5ej6cKoU/VpPthNr4HB7jsngrQ=
+  dependencies:
+    "@nuxtjs/opencollective" "0.2.2"
+    fast-safe-stringify "2.0.7"
+    iterare "1.2.0"
+    object-hash "2.0.3"
+    path-to-regexp "3.2.0"
+    tslib "1.11.1"
+    uuid "7.0.1"
 
 "@nestjs/core@^7.0.0":
   version "7.1.0"
@@ -553,6 +585,19 @@
     path-to-regexp "3.2.0"
     tslib "2.0.0"
     uuid "8.0.0"
+
+"@nestjs/jwt@^7.0.0":
+  version "7.1.0"
+  resolved "http://54.223.73.218:4873/@nestjs%2fjwt/-/jwt-7.1.0.tgz#0ad6633399641cbba327e275827fcd935207930f"
+  integrity sha1-CtZjM5lkHLujJ+J1gn/Nk1IHkw8=
+  dependencies:
+    "@types/jsonwebtoken" "8.5.0"
+    jsonwebtoken "8.5.1"
+
+"@nestjs/passport@^7.0.0":
+  version "7.1.0"
+  resolved "http://54.223.73.218:4873/@nestjs%2fpassport/-/passport-7.1.0.tgz#04cbb6dec4b6fd92b943e131a2ad89da42c2a9f0"
+  integrity sha1-BMu23sS2/ZK5Q+Exoq2J2kLCqfA=
 
 "@nestjs/platform-express@^7.0.0":
   version "7.1.0"
@@ -590,6 +635,47 @@
     chalk "^2.4.1"
     consola "^2.3.0"
     node-fetch "^2.3.0"
+
+"@ppc/server-core@^0.0.60":
+  version "0.0.60"
+  resolved "http://54.223.73.218:4873/@ppc%2fserver-core/-/server-core-0.0.60.tgz#7954239acb5c715391a60fb9973e73d192449858"
+  integrity sha512-VaQh5I9VFfqImmo/4NaClmVc4rpBjt268p/uEXNRVhtxBwOi11GecDqsziZ7nN/9eSZdpHlYUH7gg/R3eNRxLg==
+  dependencies:
+    "@ppc/server-logger" "^0.0.60"
+
+"@ppc/server-http@^0.0.60":
+  version "0.0.60"
+  resolved "http://54.223.73.218:4873/@ppc%2fserver-http/-/server-http-0.0.60.tgz#8434afd8f0f257bb3e8e7e6b3f17eb2be419b83e"
+  integrity sha512-aFK+JZR2RUws01sDgCX0LKXOzqCHg7hw5tbexwVMhk5oDvLxwV6xuWOuctuhhzYh70LkXQ4hYO/PW20n66SJyQ==
+  dependencies:
+    "@ppc/server-core" "^0.0.60"
+    axios "^0.18.0"
+
+"@ppc/server-logger@^0.0.60":
+  version "0.0.60"
+  resolved "http://54.223.73.218:4873/@ppc%2fserver-logger/-/server-logger-0.0.60.tgz#f12a35eb639c20430c9d9edc92e15fc29fb82618"
+  integrity sha512-QIe+FbDmZY4tR+QbB9tKqhzGrooQpLV3e1QlsasVuT6bbEZ2YcBaTkncQj9+h5S4l7gX7qEqtoGy0tpHyfNpSg==
+  dependencies:
+    bunyan "^1.8.12"
+
+"@ppc/up-casino-env-config@^0.0.69":
+  version "0.0.69"
+  resolved "http://54.223.73.218:4873/@ppc%2fup-casino-env-config/-/up-casino-env-config-0.0.69.tgz#6164029e9b011d5139b8f1a8fd5710a825b733ca"
+  integrity sha512-19RunENiBPw5x/2XHC3yrY/zwN9PAf7smeoWGw2jYWOgEJKnwSsOAHqNYxp/5AJ7d2aT2WiLpbHgxiC+2oFu4Q==
+  dependencies:
+    "@ppc/server-core" "^0.0.60"
+    "@ppc/server-logger" "^0.0.60"
+
+"@ppc/up-casino-open-api@0.0.69":
+  version "0.0.69"
+  resolved "http://54.223.73.218:4873/@ppc%2fup-casino-open-api/-/up-casino-open-api-0.0.69.tgz#a1ca5fa4475a5e1956a42b6e416943226babfc71"
+  integrity sha512-EYEiCDHqDEQo+eCyrAjR6okIDjWBofF0mOctZGzOjDxprGeBTkHO7G5gyHpKhYNQv1h25uV5IML7Jqb+nn8LRw==
+  dependencies:
+    "@ppc/server-core" "^0.0.60"
+    "@ppc/server-http" "^0.0.60"
+    "@ppc/server-logger" "^0.0.60"
+    "@ppc/up-casino-env-config" "^0.0.69"
+    uuid "^3.3.2"
 
 "@schematics/schematics@0.901.4":
   version "0.901.4"
@@ -669,6 +755,11 @@
   resolved "http://54.223.73.218:4873/@types%2fcookiejar/-/cookiejar-2.1.1.tgz#90b68446364baf9efd8e8349bb36bd3852b75b80"
   integrity sha1-kLaERjZLr579joNJuza9OFK3W4A=
 
+"@types/debug@^4.1.5":
+  version "4.1.5"
+  resolved "http://54.223.73.218:4873/@types%2fdebug/-/debug-4.1.5.tgz#b14efa8852b7768d898906613c23f688713e02cd"
+  integrity sha1-sU76iFK3do2JiQZhPCP2iHE+As0=
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "http://54.223.73.218:4873/@types%2feslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -697,6 +788,13 @@
   version "4.1.3"
   resolved "http://54.223.73.218:4873/@types%2fgraceful-fs/-/graceful-fs-4.1.3.tgz#039af35fe26bec35003e8d86d2ee9c586354348f"
   integrity sha1-A5rzX+Jr7DUAPo2G0u6cWGNUNI8=
+  dependencies:
+    "@types/node" "*"
+
+"@types/ioredis@^4.0.4":
+  version "4.17.3"
+  resolved "http://54.223.73.218:4873/@types%2fioredis/-/ioredis-4.17.3.tgz#65ba8b9344576ecb229c57ec1db92be3fe830ee9"
+  integrity sha1-ZbqLk0RXbssinFfsHbkr4/6DDuk=
   dependencies:
     "@types/node" "*"
 
@@ -737,6 +835,13 @@
   version "0.0.29"
   resolved "http://54.223.73.218:4873/@types%2fjson5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
+
+"@types/jsonwebtoken@8.5.0":
+  version "8.5.0"
+  resolved "http://54.223.73.218:4873/@types%2fjsonwebtoken/-/jsonwebtoken-8.5.0.tgz#2531d5e300803aa63279b232c014acf780c981c5"
+  integrity sha1-JTHV4wCAOqYyebIywBSs94DJgcU=
+  dependencies:
+    "@types/node" "*"
 
 "@types/mime@*":
   version "2.0.2"
@@ -817,6 +922,16 @@
   integrity sha1-AZkled67pnTh41nNa8saHQqy4Cs=
   dependencies:
     source-map "^0.6.1"
+
+"@types/uuid@^3.4.4":
+  version "3.4.9"
+  resolved "http://54.223.73.218:4873/@types%2fuuid/-/uuid-3.4.9.tgz#fcf01997bbc9f7c09ae5f91383af076d466594e1"
+  integrity sha1-/PAZl7vJ98Ca5fkTg68HbUZllOE=
+
+"@types/validator@13.0.0":
+  version "13.0.0"
+  resolved "http://54.223.73.218:4873/@types%2fvalidator/-/validator-13.0.0.tgz#365f1bf936aeaddd0856fc41aa1d6f82d88ee5b3"
+  integrity sha1-Nl8b+Taurd0IVvxBqh1vgtiO5bM=
 
 "@types/webpack-sources@*":
   version "0.1.7"
@@ -1326,12 +1441,28 @@ aws4@^1.8.0:
   resolved "http://54.223.73.218:4873/aws4/-/aws4-1.10.0.tgz#a17b3a8ea811060e74d47d306122400ad4497ae2"
   integrity sha1-oXs6jqgRBg501H0wYSJACtRJeuI=
 
+axios@0.19.0:
+  version "0.19.0"
+  resolved "http://54.223.73.218:4873/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
+  integrity sha1-jgm/89kSLhM/e4EByPvdAO09Krg=
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
+
 axios@0.19.2:
   version "0.19.2"
   resolved "http://54.223.73.218:4873/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
   integrity sha1-PqNsXYgY0NX4qKl6bTa4bNwAyyc=
   dependencies:
     follow-redirects "1.5.10"
+
+axios@^0.18.0:
+  version "0.18.1"
+  resolved "http://54.223.73.218:4873/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
+  integrity sha1-/z8N4ue10YDnV62YAA8Qgbh7zqM=
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
 
 babel-code-frame@^6.22.0:
   version "6.26.0"
@@ -1606,6 +1737,11 @@ bser@2.1.1:
   dependencies:
     node-int64 "^0.4.0"
 
+buffer-equal-constant-time@1.0.1:
+  version "1.0.1"
+  resolved "http://54.223.73.218:4873/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+  integrity sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk=
+
 buffer-from@1.x, buffer-from@^1.0.0:
   version "1.1.1"
   resolved "http://54.223.73.218:4873/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
@@ -1629,6 +1765,16 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "http://54.223.73.218:4873/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
+
+bunyan@^1.8.12:
+  version "1.8.14"
+  resolved "http://54.223.73.218:4873/bunyan/-/bunyan-1.8.14.tgz#3d8c1afea7de158a5238c7cb8a66ab6b38dd45b4"
+  integrity sha1-PYwa/qfeFYpSOMfLimarazjdRbQ=
+  optionalDependencies:
+    dtrace-provider "~0.8"
+    moment "^2.19.3"
+    mv "~2"
+    safe-json-stringify "~1"
 
 busboy@^0.2.11:
   version "0.2.14"
@@ -1793,6 +1939,11 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+class-transformer@^0.2.3:
+  version "0.2.3"
+  resolved "http://54.223.73.218:4873/class-transformer/-/class-transformer-0.2.3.tgz#598c92ca71dcca73f91ccb875d74a3847ccfa32d"
+  integrity sha1-WYySynHcynP5HMuHXXSjhHzPoy0=
+
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "http://54.223.73.218:4873/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
@@ -1802,6 +1953,28 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+class-validator@^0.12.2:
+  version "0.12.2"
+  resolved "http://54.223.73.218:4873/class-validator/-/class-validator-0.12.2.tgz#2ceb72f88873e9c714cf5f9c278cbc71f6f6c8ef"
+  integrity sha1-LOty+Ihz6ccUz1+cJ4y8cfb2yO8=
+  dependencies:
+    "@types/validator" "13.0.0"
+    google-libphonenumber "^3.2.8"
+    tslib ">=1.9.0"
+    validator "13.0.0"
+
+cli-color@1.4.0:
+  version "1.4.0"
+  resolved "http://54.223.73.218:4873/cli-color/-/cli-color-1.4.0.tgz#7d10738f48526824f8fe7da51857cb0f572fe01f"
+  integrity sha1-fRBzj0hSaCT4/n2lGFfLD1cv4B8=
+  dependencies:
+    ansi-regex "^2.1.1"
+    d "1"
+    es5-ext "^0.10.46"
+    es6-iterator "^2.0.3"
+    memoizee "^0.4.14"
+    timers-ext "^0.1.5"
 
 cli-color@2.0.0:
   version "2.0.0"
@@ -1855,6 +2028,11 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "http://54.223.73.218:4873/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
+
+cluster-key-slot@^1.1.0:
+  version "1.1.0"
+  resolved "http://54.223.73.218:4873/cluster-key-slot/-/cluster-key-slot-1.1.0.tgz#30474b2a981fb12172695833052bc0d01336d10d"
+  integrity sha1-MEdLKpgfsSFyaVgzBSvA0BM20Q0=
 
 co@^4.6.0:
   version "4.6.0"
@@ -2232,6 +2410,11 @@ delayed-stream@~1.0.0:
   resolved "http://54.223.73.218:4873/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
+denque@^1.1.0:
+  version "1.4.1"
+  resolved "http://54.223.73.218:4873/denque/-/denque-1.4.1.tgz#6744ff7641c148c3f8a69c307e51235c1f4a37cf"
+  integrity sha1-Z0T/dkHBSMP4ppwwflEjXB9KN88=
+
 depd@~1.1.2:
   version "1.1.2"
   resolved "http://54.223.73.218:4873/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
@@ -2309,6 +2492,13 @@ domexception@^1.0.1:
   dependencies:
     webidl-conversions "^4.0.2"
 
+dtrace-provider@~0.8:
+  version "0.8.8"
+  resolved "http://54.223.73.218:4873/dtrace-provider/-/dtrace-provider-0.8.8.tgz#2996d5490c37e1347be263b423ed7b297fb0d97e"
+  integrity sha1-KZbVSQw34TR74mO0I+17KX+w2X4=
+  dependencies:
+    nan "^2.14.0"
+
 duplexify@^3.4.2, duplexify@^3.6.0:
   version "3.7.1"
   resolved "http://54.223.73.218:4873/duplexify/-/duplexify-3.7.1.tgz#2a4df5317f6ccfd91f86d6fd25d8d8a103b88309"
@@ -2326,6 +2516,13 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
+
+ecdsa-sig-formatter@1.0.11:
+  version "1.0.11"
+  resolved "http://54.223.73.218:4873/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz#ae0f0fa2d85045ef14a817daa3ce9acd0489e5bf"
+  integrity sha1-rg8PothQRe8UqBfao86azQSJ5b8=
+  dependencies:
+    safe-buffer "^5.0.1"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -3157,6 +3354,17 @@ glob-parent@^5.0.0, glob-parent@~5.1.0:
   dependencies:
     is-glob "^4.0.1"
 
+glob@^6.0.1:
+  version "6.0.4"
+  resolved "http://54.223.73.218:4873/glob/-/glob-6.0.4.tgz#0f08860f6a155127b2fadd4f9ce24b1aab6e4d22"
+  integrity sha1-DwiGD2oVUSey+t1PnOJLGqtuTSI=
+  dependencies:
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "2 || 3"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
 glob@^7.0.0, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.1.6"
   resolved "http://54.223.73.218:4873/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
@@ -3180,6 +3388,11 @@ globals@^12.1.0:
   integrity sha1-oYgTV2pBsAokqX5/gVkYwuGZJfg=
   dependencies:
     type-fest "^0.8.1"
+
+google-libphonenumber@^3.2.8:
+  version "3.2.10"
+  resolved "http://54.223.73.218:4873/google-libphonenumber/-/google-libphonenumber-3.2.10.tgz#021a314652747d736a39e2e60dc670f0431425ad"
+  integrity sha1-AhoxRlJ0fXNqOeLmDcZw8EMUJa0=
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.4"
@@ -3443,6 +3656,21 @@ interpret@^1.0.0:
   resolved "http://54.223.73.218:4873/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
   integrity sha1-1QYaYiS+WOgIOYX1AU2EQ1lXYpY=
 
+ioredis@^4.2.0:
+  version "4.17.3"
+  resolved "http://54.223.73.218:4873/ioredis/-/ioredis-4.17.3.tgz#9938c60e4ca685f75326337177bdc2e73ae9c9dc"
+  integrity sha1-mTjGDkymhfdTJjNxd73C5zrpydw=
+  dependencies:
+    cluster-key-slot "^1.1.0"
+    debug "^4.1.1"
+    denque "^1.1.0"
+    lodash.defaults "^4.2.0"
+    lodash.flatten "^4.4.0"
+    redis-commands "1.5.0"
+    redis-errors "^1.2.0"
+    redis-parser "^3.0.0"
+    standard-as-callback "^2.0.1"
+
 ip-regex@^2.1.0:
   version "2.1.0"
   resolved "http://54.223.73.218:4873/ip-regex/-/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
@@ -3490,6 +3718,11 @@ is-buffer@^1.1.5:
   version "1.1.6"
   resolved "http://54.223.73.218:4873/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
+
+is-buffer@^2.0.2:
+  version "2.0.4"
+  resolved "http://54.223.73.218:4873/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
+  integrity sha1-PlcvI8hBGlz9lVfISeNmXgspBiM=
 
 is-callable@^1.1.4, is-callable@^1.1.5:
   version "1.1.5"
@@ -4219,6 +4452,22 @@ jsonfile@^4.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+jsonwebtoken@8.5.1, jsonwebtoken@^8.2.0:
+  version "8.5.1"
+  resolved "http://54.223.73.218:4873/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
+  integrity sha1-AOceC431TCEhofJhN98igGc7zA0=
+  dependencies:
+    jws "^3.2.2"
+    lodash.includes "^4.3.0"
+    lodash.isboolean "^3.0.3"
+    lodash.isinteger "^4.0.4"
+    lodash.isnumber "^3.0.3"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.once "^4.0.0"
+    ms "^2.1.1"
+    semver "^5.6.0"
+
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "http://54.223.73.218:4873/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -4228,6 +4477,23 @@ jsprim@^1.2.2:
     extsprintf "1.3.0"
     json-schema "0.2.3"
     verror "1.10.0"
+
+jwa@^1.4.1:
+  version "1.4.1"
+  resolved "http://54.223.73.218:4873/jwa/-/jwa-1.4.1.tgz#743c32985cb9e98655530d53641b66c8645b039a"
+  integrity sha1-dDwymFy56YZVUw1TZBtmyGRbA5o=
+  dependencies:
+    buffer-equal-constant-time "1.0.1"
+    ecdsa-sig-formatter "1.0.11"
+    safe-buffer "^5.0.1"
+
+jws@^3.2.2:
+  version "3.2.2"
+  resolved "http://54.223.73.218:4873/jws/-/jws-3.2.2.tgz#001099f3639468c9414000e99995fa52fb478304"
+  integrity sha1-ABCZ82OUaMlBQADpmZX6UvtHgwQ=
+  dependencies:
+    jwa "^1.4.1"
+    safe-buffer "^5.0.1"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -4323,10 +4589,55 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.defaults@^4.2.0:
+  version "4.2.0"
+  resolved "http://54.223.73.218:4873/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+  integrity sha1-0JF4cW/+pN3p5ft7N/bwgCJ0WAw=
+
+lodash.flatten@^4.4.0:
+  version "4.4.0"
+  resolved "http://54.223.73.218:4873/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
+  integrity sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
+
+lodash.includes@^4.3.0:
+  version "4.3.0"
+  resolved "http://54.223.73.218:4873/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
+  integrity sha1-YLuYqHy5I8aMoeUTJUgzFISfVT8=
+
+lodash.isboolean@^3.0.3:
+  version "3.0.3"
+  resolved "http://54.223.73.218:4873/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz#6c2e171db2a257cd96802fd43b01b20d5f5870f6"
+  integrity sha1-bC4XHbKiV82WgC/UOwGyDV9YcPY=
+
+lodash.isinteger@^4.0.4:
+  version "4.0.4"
+  resolved "http://54.223.73.218:4873/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz#619c0af3d03f8b04c31f5882840b77b11cd68343"
+  integrity sha1-YZwK89A/iwTDH1iChAt3sRzWg0M=
+
+lodash.isnumber@^3.0.3:
+  version "3.0.3"
+  resolved "http://54.223.73.218:4873/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
+  integrity sha1-POdoEMWSjQM1IwGsKHMX8RwLH/w=
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "http://54.223.73.218:4873/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
+
+lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "http://54.223.73.218:4873/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+  integrity sha1-1SfftUVuynzJu5XV2ur4i6VKVFE=
+
 lodash.memoize@4.x:
   version "4.1.2"
   resolved "http://54.223.73.218:4873/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.once@^4.0.0:
+  version "4.1.1"
+  resolved "http://54.223.73.218:4873/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+  integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -4560,7 +4871,7 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   resolved "http://54.223.73.218:4873/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
   integrity sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=
 
-minimatch@^3.0.4:
+"minimatch@2 || 3", minimatch@^3.0.4:
   version "3.0.4"
   resolved "http://54.223.73.218:4873/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   integrity sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
@@ -4596,12 +4907,17 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
-mkdirp@0.x, mkdirp@^0.5.1, mkdirp@^0.5.3:
+mkdirp@0.x, mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@~0.5.1:
   version "0.5.5"
   resolved "http://54.223.73.218:4873/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"
   integrity sha1-2Rzv1i0UNsoPQWIOJRKI1CAJne8=
   dependencies:
     minimist "^1.2.5"
+
+moment@^2.19.3:
+  version "2.27.0"
+  resolved "http://54.223.73.218:4873/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha1-i/9OPiaiNiIN/j423nVrbrqgEF0=
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -4649,7 +4965,16 @@ mute-stream@0.0.8:
   resolved "http://54.223.73.218:4873/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha1-FjDEKyJR/4HiooPelqVJfqkuXg0=
 
-nan@^2.12.1:
+mv@~2:
+  version "2.1.1"
+  resolved "http://54.223.73.218:4873/mv/-/mv-2.1.1.tgz#ae6ce0d6f6d5e0a4f7d893798d03c1ea9559b6a2"
+  integrity sha1-rmzg1vbV4KT32JN5jQPB6pVZtqI=
+  dependencies:
+    mkdirp "~0.5.1"
+    ncp "~2.0.0"
+    rimraf "~2.4.0"
+
+nan@^2.12.1, nan@^2.14.0:
   version "2.14.1"
   resolved "http://54.223.73.218:4873/nan/-/nan-2.14.1.tgz#d7be34dfa3105b91494c3147089315eff8874b01"
   integrity sha1-174036MQW5FJTDFHCJMV7/iHSwE=
@@ -4676,6 +5001,11 @@ natural-compare@^1.4.0:
   resolved "http://54.223.73.218:4873/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
+ncp@~2.0.0:
+  version "2.0.0"
+  resolved "http://54.223.73.218:4873/ncp/-/ncp-2.0.0.tgz#195a21d6c46e361d2fb1281ba38b91e9df7bdbb3"
+  integrity sha1-GVoh1sRuNh0vsSgbo4uR6d9727M=
+
 negotiator@0.6.2:
   version "0.6.2"
   resolved "http://54.223.73.218:4873/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
@@ -4685,6 +5015,33 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.1"
   resolved "http://54.223.73.218:4873/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha1-rCetpmFn+ohJpq3dg39rGJrSCBw=
+
+nestjs-redis@^1.2.3, nestjs-redis@^1.2.8:
+  version "1.2.8"
+  resolved "http://54.223.73.218:4873/nestjs-redis/-/nestjs-redis-1.2.8.tgz#0b62a533b3abf7fad18e4bd2f0c8f19845d56582"
+  integrity sha1-C2KlM7Or9/rRjkvS8MjxmEXVZYI=
+  dependencies:
+    "@nestjs/common" "6.3.1"
+    "@nestjs/core" "^6.6.7"
+    "@types/ioredis" "^4.0.4"
+    "@types/uuid" "^3.4.4"
+    ioredis "^4.2.0"
+    reflect-metadata "^0.1.12"
+    rxjs "^6.2.2"
+    uuid "^3.3.2"
+
+nestjs-simple-redis-lock@^0.2.1:
+  version "0.2.1"
+  resolved "http://54.223.73.218:4873/nestjs-simple-redis-lock/-/nestjs-simple-redis-lock-0.2.1.tgz#06b3814e07922a2175616c5093ea28d1b48e2c43"
+  integrity sha1-BrOBTgeSKiF1YWxQk+oo0bSOLEM=
+  dependencies:
+    "@nestjs/common" "^6.6.7"
+    "@nestjs/core" "^6.6.7"
+    "@types/debug" "^4.1.5"
+    debug "^4.1.1"
+    nestjs-redis "^1.2.3"
+    reflect-metadata "^0.1.13"
+    rxjs "^6.5.3"
 
 next-tick@1:
   version "1.1.0"
@@ -5094,6 +5451,27 @@ pascalcase@^0.1.1:
   resolved "http://54.223.73.218:4873/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
   integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
 
+passport-jwt@^4.0.0:
+  version "4.0.0"
+  resolved "http://54.223.73.218:4873/passport-jwt/-/passport-jwt-4.0.0.tgz#7f0be7ba942e28b9f5d22c2ebbb8ce96ef7cf065"
+  integrity sha1-fwvnupQuKLn10iwuu7jOlu988GU=
+  dependencies:
+    jsonwebtoken "^8.2.0"
+    passport-strategy "^1.0.0"
+
+passport-strategy@1.x.x, passport-strategy@^1.0.0:
+  version "1.0.0"
+  resolved "http://54.223.73.218:4873/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
+  integrity sha1-tVOaqPwiWj0a0XlHbd8ja0QPUuQ=
+
+passport@^0.4.1:
+  version "0.4.1"
+  resolved "http://54.223.73.218:4873/passport/-/passport-0.4.1.tgz#941446a21cb92fc688d97a0861c38ce9f738f270"
+  integrity sha1-lBRGohy5L8aI2XoIYcOM6fc48nA=
+  dependencies:
+    passport-strategy "1.x.x"
+    pause "0.0.1"
+
 path-browserify@0.0.1:
   version "0.0.1"
   resolved "http://54.223.73.218:4873/path-browserify/-/path-browserify-0.0.1.tgz#e6c4ddd7ed3aa27c68a20cc4e50e1a4ee83bbc4a"
@@ -5150,6 +5528,11 @@ path-type@^2.0.0:
   integrity sha1-8BLMuEFbcJb8LaoQVMPXI4lZTHM=
   dependencies:
     pify "^2.0.0"
+
+pause@0.0.1:
+  version "0.0.1"
+  resolved "http://54.223.73.218:4873/pause/-/pause-0.0.1.tgz#1d408b3fdb76923b9543d96fb4c9dfd535d9cb5d"
+  integrity sha1-HUCLP9t2kjuVQ9lvtMnf1TXZy10=
 
 pbkdf2@^3.0.3:
   version "3.0.17"
@@ -5494,7 +5877,24 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-reflect-metadata@^0.1.13:
+redis-commands@1.5.0:
+  version "1.5.0"
+  resolved "http://54.223.73.218:4873/redis-commands/-/redis-commands-1.5.0.tgz#80d2e20698fe688f227127ff9e5164a7dd17e785"
+  integrity sha1-gNLiBpj+aI8icSf/nlFkp90X54U=
+
+redis-errors@^1.0.0, redis-errors@^1.2.0:
+  version "1.2.0"
+  resolved "http://54.223.73.218:4873/redis-errors/-/redis-errors-1.2.0.tgz#eb62d2adb15e4eaf4610c04afe1529384250abad"
+  integrity sha1-62LSrbFeTq9GEMBK/hUpOEJQq60=
+
+redis-parser@^3.0.0:
+  version "3.0.0"
+  resolved "http://54.223.73.218:4873/redis-parser/-/redis-parser-3.0.0.tgz#b66d828cdcafe6b4b8a428a7def4c6bcac31c8b4"
+  integrity sha1-tm2CjNyv5rS4pCin3vTGvKwxyLQ=
+  dependencies:
+    redis-errors "^1.0.0"
+
+reflect-metadata@^0.1.12, reflect-metadata@^0.1.13:
   version "0.1.13"
   resolved "http://54.223.73.218:4873/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
   integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
@@ -5652,6 +6052,13 @@ rimraf@^2.5.4, rimraf@^2.6.3:
   dependencies:
     glob "^7.1.3"
 
+rimraf@~2.4.0:
+  version "2.4.5"
+  resolved "http://54.223.73.218:4873/rimraf/-/rimraf-2.4.5.tgz#ee710ce5d93a8fdb856fb5ea8ff0e2d75934b2da"
+  integrity sha1-7nEM5dk6j9uFb7Xqj/Di11k0sto=
+  dependencies:
+    glob "^6.0.1"
+
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.2"
   resolved "http://54.223.73.218:4873/ripemd160/-/ripemd160-2.0.2.tgz#a1c1a6f624751577ba5d07914cbc92850585890c"
@@ -5691,6 +6098,13 @@ rxjs@6.5.4:
   dependencies:
     tslib "^1.9.0"
 
+rxjs@^6.2.2:
+  version "6.6.2"
+  resolved "http://54.223.73.218:4873/rxjs/-/rxjs-6.6.2.tgz#8096a7ac03f2cc4fe5860ef6e572810d9e01c0d2"
+  integrity sha1-gJanrAPyzE/lhg725XKBDZ4BwNI=
+  dependencies:
+    tslib "^1.9.0"
+
 rxjs@^6.5.3, rxjs@^6.5.4:
   version "6.5.5"
   resolved "http://54.223.73.218:4873/rxjs/-/rxjs-6.5.5.tgz#c5c884e3094c8cfee31bf27eb87e54ccfc87f9ec"
@@ -5707,6 +6121,11 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, 
   version "5.2.1"
   resolved "http://54.223.73.218:4873/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=
+
+safe-json-stringify@~1:
+  version "1.2.0"
+  resolved "http://54.223.73.218:4873/safe-json-stringify/-/safe-json-stringify-1.2.0.tgz#356e44bc98f1f93ce45df14bcd7c01cda86e0afd"
+  integrity sha1-NW5EvJjx+TzkXfFLzXwBzahuCv0=
 
 safe-regex@^1.1.0:
   version "1.1.0"
@@ -6038,6 +6457,11 @@ stack-utils@^1.0.1:
   version "1.0.2"
   resolved "http://54.223.73.218:4873/stack-utils/-/stack-utils-1.0.2.tgz#33eba3897788558bebfc2db059dc158ec36cebb8"
   integrity sha1-M+ujiXeIVYvr/C2wWdwVjsNs67g=
+
+standard-as-callback@^2.0.1:
+  version "2.0.1"
+  resolved "http://54.223.73.218:4873/standard-as-callback/-/standard-as-callback-2.0.1.tgz#ed8bb25648e15831759b6023bdb87e6b60b38126"
+  integrity sha1-7YuyVkjhWDF1m2Ajvbh+a2CzgSY=
 
 static-extend@^0.1.1:
   version "0.1.2"
@@ -6534,7 +6958,12 @@ tsconfig-paths@3.9.0, tsconfig-paths@^3.4.0, tsconfig-paths@^3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@2.0.0:
+tslib@1.11.1:
+  version "1.11.1"
+  resolved "http://54.223.73.218:4873/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
+  integrity sha1-6xXRKIJ/vuKEFUnhcfRe0zisfjU=
+
+tslib@2.0.0, tslib@>=1.9.0:
   version "2.0.0"
   resolved "http://54.223.73.218:4873/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
   integrity sha1-GNE/wtzgQFHiDwdMyDh/2Aic5PM=
@@ -6726,6 +7155,16 @@ utils-merge@1.0.1:
   resolved "http://54.223.73.218:4873/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
+uuid@3.3.2:
+  version "3.3.2"
+  resolved "http://54.223.73.218:4873/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
+
+uuid@7.0.1:
+  version "7.0.1"
+  resolved "http://54.223.73.218:4873/uuid/-/uuid-7.0.1.tgz#95ed6ff3d8c881cbf85f0f05cc3915ef994818ef"
+  integrity sha1-le1v89jIgcv4Xw8FzDkV75lIGO8=
+
 uuid@8.0.0:
   version "8.0.0"
   resolved "http://54.223.73.218:4873/uuid/-/uuid-8.0.0.tgz#bc6ccf91b5ff0ac07bbcdbf1c7c4e150db4dbb6c"
@@ -6757,6 +7196,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator@13.0.0:
+  version "13.0.0"
+  resolved "http://54.223.73.218:4873/validator/-/validator-13.0.0.tgz#0fb6c6bb5218ea23d368a8347e6d0f5a70e3bcab"
+  integrity sha1-D7bGu1IY6iPTaKg0fm0PWnDjvKs=
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
