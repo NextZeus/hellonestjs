@@ -1,16 +1,18 @@
-process.env.GAME_ENV='dev';
+process.env.GAME_ENV = 'dev';
 process.env.NODE_ENV = 'development';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe, ShutdownSignal } from '@nestjs/common';
 import { AllExceptionFilter } from './common/filters/all-exceptions.filter';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
+import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('');
   // 全局异常处理 统一返回 {error, errorMsg, serverTime}
-  app.useGlobalFilters(new AllExceptionFilter());
+  app.useGlobalFilters(new HttpExceptionFilter());
+  // app.useGlobalFilters(new AllExceptionFilter());
   // app.useGlobalPipes((
   //   new ValidationPipe({
   //     transform: true, // 将 plain object 转化为对应的 dto class 对象
@@ -24,7 +26,7 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ResponseInterceptor());
 
   // graceful shutdown
-  process.on(ShutdownSignal.SIGINT, async() => {
+  process.on(ShutdownSignal.SIGINT, async () => {
     await app.close();
     process.exit(0);
   });

@@ -1,4 +1,4 @@
-import { Controller, Get, Req, HttpCode, Header, Redirect, Query, Param, Post, Body, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Req, HttpCode, Header, Redirect, Query, Param, Post, Body, Put, Delete, UseFilters } from '@nestjs/common';
 import { Request } from 'express';
 import { Observable, of } from 'rxjs';
 import { CreateCatDto } from './dto/create-cat.dto';
@@ -6,18 +6,23 @@ import { ListAllEntitiesDto } from './dto/list-all-entities.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
+import { HttpExceptionFilter } from 'src/common/filters/http-exception.filter';
+import { ForbiddenException } from 'src/common/exceptions/forbidden.excption';
 
 @Controller('cats')
+@UseFilters(HttpExceptionFilter)
 export class CatsController {
-    constructor(private catService: CatsService){}
+    constructor(private catService: CatsService) { }
 
     @Post()
+    @UseFilters(HttpExceptionFilter)
     async create(@Body() createCatDto: CreateCatDto) {
-        return this.catService.create(createCatDto)
+        throw new ForbiddenException();
+        // return this.catService.create(createCatDto)
     }
 
     @Get()
-    async findAll(): Promise<Cat[]>{
+    async findAll(): Promise<Cat[]> {
         return this.catService.findAll();
     }
 
@@ -27,7 +32,7 @@ export class CatsController {
         return `This action returns a #${id}`;
     }
 
-    
+
     @Put(':id')
     update(@Param('id') id: string, @Body() updateCatDto: UpdateCatDto) {
         return `This action updates a #${id} cat`;
