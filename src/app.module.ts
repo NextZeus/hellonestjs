@@ -2,9 +2,12 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
+import { CatsController } from './cats/cats.controller';
+import { AdminController } from './admin/admin.controller';
+import { AccountController } from './account/account.controller';
 @Module({
   imports: [],
-  controllers: [AppController],
+  controllers: [AppController, CatsController, AdminController, AccountController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
