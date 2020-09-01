@@ -5,10 +5,11 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { CatsController } from './cats/cats.controller';
 import { AdminController } from './admin/admin.controller';
 import { AccountController } from './account/account.controller';
+import { CatsService } from './cats/cats.service';
 @Module({
   imports: [],
   controllers: [AppController, CatsController, AdminController, AccountController],
-  providers: [AppService],
+  providers: [AppService, CatsService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
