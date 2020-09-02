@@ -1,4 +1,4 @@
-import { Controller, Get, Req, HttpCode, Header, Redirect, Query, Param, Post, Body, Put, Delete, UseFilters } from '@nestjs/common';
+import { Controller, Get, Req, HttpCode, Header, Redirect, Query, Param, Post, Body, Put, Delete, UseFilters, ParseIntPipe, UsePipes } from '@nestjs/common';
 import { Request } from 'express';
 import { Observable, of } from 'rxjs';
 import { CreateCatDto } from './dto/create-cat.dto';
@@ -8,17 +8,19 @@ import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
 import { HttpExceptionFilter } from 'src/common/filters/http-exception.filter';
 import { ForbiddenException } from 'src/common/exceptions/forbidden.excption';
+import { ValidationPipe } from 'src/common/pipes/validation.pipe';
+import { JoiValidationPipe } from 'src/common/pipes/joiValidation.pipe';
+
+
 
 @Controller('cats')
-@UseFilters(HttpExceptionFilter)
+// @UseFilters(HttpExceptionFilter)
 export class CatsController {
     constructor(private catService: CatsService) { }
 
     @Post()
-    @UseFilters(HttpExceptionFilter)
     async create(@Body() createCatDto: CreateCatDto) {
-        throw new ForbiddenException();
-        // return this.catService.create(createCatDto)
+        return this.catService.create(createCatDto)
     }
 
     @Get()
@@ -41,5 +43,10 @@ export class CatsController {
     @Delete(':id')
     remove(@Param('id') id: string) {
         return `This action removes a #${id} cat`;
+    }
+
+    @Get()
+    async findOne_(@Query('id', ParseIntPipe) id: number) {
+        return this.catService.findOne(id)
     }
 }

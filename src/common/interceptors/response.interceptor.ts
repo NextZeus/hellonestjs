@@ -2,7 +2,6 @@ import { NestInterceptor, Injectable, ExecutionContext, CallHandler } from "@nes
 import { Request } from "express";
 import { Observable } from "rxjs";
 import { map, tap } from 'rxjs/operators'
-import { getLogger } from '@ppc/server-logger';
 
 export interface Response<T> {
     code: number;
@@ -13,7 +12,7 @@ export interface Response<T> {
 
 @Injectable()
 export class ResponseInterceptor<T> implements NestInterceptor<T, Response<T>> {
-    private readonly logger = getLogger(__filename);
+    private readonly logger = console;
     intercept(context: ExecutionContext, next: CallHandler<T>): Observable<Response<T>> {
         const beginTime = Date.now();
         const request = context.switchToHttp().getResponse<Request>();

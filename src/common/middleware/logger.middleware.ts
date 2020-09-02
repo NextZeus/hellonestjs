@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
 export class LoggerMiddleware implements NestMiddleware {
     use(req: Request, res: Response, next: Function) {
-        console.log("Request Path: %s IP: %s", req.path, req.ip); 
+        console.log("%s %s",req.method, req.path); 
         next();
     }
 }

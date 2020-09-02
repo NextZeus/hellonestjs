@@ -2,16 +2,17 @@ process.env.GAME_ENV = 'dev';
 process.env.NODE_ENV = 'development';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe, ShutdownSignal } from '@nestjs/common';
+import { ShutdownSignal } from '@nestjs/common';
 import { AllExceptionFilter } from './common/filters/all-exceptions.filter';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
+import { ValidationPipe } from 'src/common/pipes/validation.pipe';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('');
   // 全局异常处理 统一返回 {error, errorMsg, serverTime}
-  app.useGlobalFilters(new HttpExceptionFilter());
+  // app.useGlobalFilters(new HttpExceptionFilter());
   // app.useGlobalFilters(new AllExceptionFilter());
   // app.useGlobalPipes((
   //   new ValidationPipe({
@@ -22,6 +23,7 @@ async function bootstrap() {
   //     forbidUnknownValues: true, // 文档中建议打开，但这个开关具体什么意思没弄明白
   //   })
   // ))
+  app.useGlobalPipes(new ValidationPipe());
   // 没有异常时，统一设置给调用方传递 { error, errorMsg, serverTime }
   app.useGlobalInterceptors(new ResponseInterceptor());
 
@@ -31,6 +33,7 @@ async function bootstrap() {
     process.exit(0);
   });
   await app.listen(3000);
+  console.log('app is listening on http://localhost:3000')
 
   // send ready signal to PM2
   if (typeof process.send === 'function') {
