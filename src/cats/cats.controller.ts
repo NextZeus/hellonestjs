@@ -10,6 +10,7 @@ import { HttpExceptionFilter } from 'src/common/filters/http-exception.filter';
 import { ForbiddenException } from 'src/common/exceptions/forbidden.excption';
 import { ValidationPipe } from 'src/common/pipes/validation.pipe';
 import { JoiValidationPipe } from 'src/common/pipes/joiValidation.pipe';
+import { Roles } from 'src/common/decorators/roles.decorator';
 
 
 
@@ -19,6 +20,7 @@ export class CatsController {
     constructor(private catService: CatsService) { }
 
     @Post()
+    @Roles('admin')
     async create(@Body() createCatDto: CreateCatDto) {
         return this.catService.create(createCatDto)
     }

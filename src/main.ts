@@ -1,12 +1,13 @@
 process.env.GAME_ENV = 'dev';
 process.env.NODE_ENV = 'development';
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ShutdownSignal } from '@nestjs/common';
 import { AllExceptionFilter } from './common/filters/all-exceptions.filter';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { ValidationPipe } from 'src/common/pipes/validation.pipe';
+import { RolesGuard } from './common/guards/roles.guard';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -23,6 +24,7 @@ async function bootstrap() {
   //     forbidUnknownValues: true, // 文档中建议打开，但这个开关具体什么意思没弄明白
   //   })
   // ))
+  app.useGlobalGuards(new RolesGuard(new Reflector()));
   app.useGlobalPipes(new ValidationPipe());
   // 没有异常时，统一设置给调用方传递 { error, errorMsg, serverTime }
   app.useGlobalInterceptors(new ResponseInterceptor());
