@@ -6,8 +6,9 @@ import { ShutdownSignal } from '@nestjs/common';
 import { AllExceptionFilter } from './common/filters/all-exceptions.filter';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
-import { ValidationPipe } from 'src/common/pipes/validation.pipe';
+import { ValidationPipe } from './common/pipes/validation.pipe';
 import { RolesGuard } from './common/guards/roles.guard';
+import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -26,6 +27,7 @@ async function bootstrap() {
   // ))
   app.useGlobalGuards(new RolesGuard(new Reflector()));
   app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalInterceptors(new LoggingInterceptor());
   // 没有异常时，统一设置给调用方传递 { error, errorMsg, serverTime }
   app.useGlobalInterceptors(new ResponseInterceptor());
 
