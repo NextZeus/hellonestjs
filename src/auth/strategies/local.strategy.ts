@@ -6,7 +6,7 @@ import { AuthService } from "../auth.service";
 export class LocalStrategy extends PassportStrategy(Strategy) {
     constructor(private authService: AuthService) {
         // we may pass an options object to specify different property names, for example:
-        // super({ usernameField: 'email' })
+        // super({ usernameField: 'email', passwordField: 'password', })
         super();
     }
     // For each strategy, Passport will call the verify function
