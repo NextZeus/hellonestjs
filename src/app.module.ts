@@ -6,10 +6,13 @@ import { AdminController } from './admin/admin.controller';
 import { AccountController } from './account/account.controller';
 import { CatsModule } from './cats/cats.module';
 import { ConfigModule } from './config/config.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersService } from './users/users.service';
+import { UsersModule } from './users/users.module';
 @Module({
-  imports: [CatsModule, ConfigModule],
+  imports: [CatsModule, ConfigModule, AuthModule, UsersModule],
   controllers: [AppController, AdminController, AccountController],
-  providers: [AppService],
+  providers: [AppService, UsersService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

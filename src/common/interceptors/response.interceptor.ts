@@ -26,7 +26,7 @@ export class ResponseInterceptor<T> implements NestInterceptor<T, Response<T>> {
             })),
             tap(respObj =>
                 this.logger.debug({
-                    url: request.originalUrl,
+                    url: request.url,
                     responseTime: Date.now() - beginTime
                 }, 'req end')
             ),
