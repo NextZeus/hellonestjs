@@ -7,4 +7,8 @@ export class ConfigService {
     get RedisPrefix(): string {
         return this.redisPrefix;
     }
+
+    get(name: string): any {
+        
+    }
 }
