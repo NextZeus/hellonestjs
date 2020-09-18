@@ -6,28 +6,48 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { AdminController } from './admin/admin.controller';
 import { AccountController } from './account/account.controller';
 import { CatsModule } from './cats/cats.module';
-import { ConfigModule } from './config/config.module';
+import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { UsersService } from './users/users.service';
 import { UsersModule } from './users/users.module';
-import { ConfigService } from './config/config.service';
+import { ConfigService } from '@nestjs/config';
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env.development',
+      isGlobal: true,
+    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
-        type: 'mysql',
-        host: configService.get('HOST'),
-        port: +configService.get('PORT'),
-        username: configService.get('USERNAME'),
-        password: configService.get('PASSWORD'),
-        database: configService.get('DATABASE'),
+        type: 'postgres',
+        host: configService.get<string>('TYPEORM_DATABASE_HOST'),
+        port: +configService.get<number>('TYPEORM_DATABASE_PORT'),
+        username: configService.get<string>('TYPEORM_DATABASE_USERNAME'),
+        password: configService.get<string>('TYPEORM_DATABASE_PASSWORD'),
+        database: configService.get<string>('TYPEORM_DATABASE_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
       }),
       inject: [ConfigService],
     }),
-    CatsModule, ConfigModule, AuthModule, UsersModule
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) => ({
+        type: 'mysql',
+        host: configService.get<string>('TYPEORM_MYSQL_DATABASE_HOST'),
+        port: +configService.get<number>('TYPEORM_MYSQL_DATABASE_PORT'),
+        username: configService.get<string>('TYPEORM_MYSQL_DATABASE_USERNAME'),
+        password: configService.get<string>('TYPEORM_MYSQL_DATABASE_PASSWORD'),
+        database: configService.get<string>('TYPEORM_MYSQL_DATABASE_NAME'),
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        synchronize: true,
+      }),
+      inject: [ConfigService],
+    }),
+    UsersModule,
+    CatsModule, 
+    AuthModule
   ],
   controllers: [AppController, AdminController, AccountController],
   providers: [AppService, UsersService],
